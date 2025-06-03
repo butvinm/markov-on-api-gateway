@@ -6,21 +6,21 @@ info:
 servers:
   - url: https://d5dlqokbr75c9u16bs4b.aqkd4clz.apigw.yandexcloud.net
 paths:
-  /a/{padding+}/{tail+}:
+  /a/{tail0+}/{tail1+}:
     get:
       parameters:
-        - name: padding
+        - name: tail0
           in: path
-        - name: tail
+        - name: tail1
           in: path
       x-yc-apigateway-integration:
         type: dummy
         http_code: 301
         http_headers:
-          Location: /b/{padding}/{tail}
+          Location: /b/{tail0}/{tail1}
         content:
           "*": ""
-  /{h}/{head+}/a/{tail+}:
+  /{head+}/a/{tail+}:
     get:
       parameters:
         - name: head
