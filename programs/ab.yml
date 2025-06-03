@@ -3,8 +3,6 @@ info:
   title: A to B
   version: 1.0.0
   description: Replace all /a/ path segments with /b/
-servers:
-  - url: https://d5dlqokbr75c9u16bs4b.aqkd4clz.apigw.yandexcloud.net
 paths:
   /a/{tail0+}/{tail1+}:
     get:

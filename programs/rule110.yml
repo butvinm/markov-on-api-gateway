@@ -3,8 +3,6 @@ info:
   title: Rule 110
   version: 1_0_0
   description: Implementation of the famous Rule 110 algorithm, that proved to be Turing Complete. Input path format /rule110/_/o/o/_/o/o/o/
-servers:
-  - url: https://d5dlqokbr75c9u16bs4b.aqkd4clz.apigw.yandexcloud.net
 paths:
   /rule110/{tail+}:
     get:

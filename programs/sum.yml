@@ -3,8 +3,6 @@ info:
   title: Binary sum
   version: 1.0.0
   description: Calculate sum of two binary numbers. Input path format /sum/{a}/_/{b}
-servers:
-  - url: https://d5dlqokbr75c9u16bs4b.aqkd4clz.apigw.yandexcloud.net
 paths:
   /sum/{a+}/_/{b+}:
     get:
