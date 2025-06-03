@@ -1,0 +1,334 @@
+openapi: 3.0.0
+info:
+  title: Rule 110
+  version: 1_0_0
+  description: Implementation of the famous Rule 110 algorithm, that proved to be Turing Complete. Input path format /rule110/_/o/o/_/o/o/o/
+servers:
+  - url: https://d5dlqokbr75c9u16bs4b.aqkd4clz.apigw.yandexcloud.net
+paths:
+  /rule110/{tail+}:
+    get:
+      parameters:
+        - name: tail
+          in: path
+      x-yc-apigateway-integration:
+        type: dummy
+        http_code: 301
+        http_headers:
+          Location: /start/{tail}
+        content:
+          "*": ""
+  ######
+  ######
+  ######
+  /start/o/o/{tail+}:
+    get:
+      parameters:
+        - name: tail
+          in: path
+      x-yc-apigateway-integration:
+        type: dummy
+        http_code: 301
+        http_headers:
+          Location: /process/o/o/{tail}/_/-/o
+        content:
+          "*": ""
+  /start/o/_/{tail+}:
+    get:
+      parameters:
+        - name: tail
+          in: path
+      x-yc-apigateway-integration:
+        type: dummy
+        http_code: 301
+        http_headers:
+          Location: /process/o/_/{tail}/_/-/o
+        content:
+          "*": ""
+  /start/_/o/{tail+}:
+    get:
+      parameters:
+        - name: tail
+          in: path
+      x-yc-apigateway-integration:
+        type: dummy
+        http_code: 301
+        http_headers:
+          Location: /process/_/o/{tail}/_/-/o
+        content:
+          "*": ""
+  /start/_/_/{tail+}:
+    get:
+      parameters:
+        - name: tail
+          in: path
+      x-yc-apigateway-integration:
+        type: dummy
+        http_code: 301
+        http_headers:
+          Location: /process/_/_/{tail}/_/-/_
+        content:
+          "*": ""
+  ######
+  ######
+  ######
+  /process/o/o/o/{tail+}/-/{next+}:
+    get:
+      parameters:
+        - name: tail
+          in: path
+        - name: next
+          in: path
+      x-yc-apigateway-integration:
+        type: dummy
+        http_code: 301
+        http_headers:
+          Location: /process/o/o/{tail}/-/{next}/_
+        content:
+          "*": ""
+  /process/o/o/_/{tail+}/-/{next+}:
+    get:
+      parameters:
+        - name: tail
+          in: path
+        - name: next
+          in: path
+      x-yc-apigateway-integration:
+        type: dummy
+        http_code: 301
+        http_headers:
+          Location: /process/o/_/{tail}/-/{next}/o
+        content:
+          "*": ""
+  /process/o/_/o/{tail+}/-/{next+}:
+    get:
+      parameters:
+        - name: tail
+          in: path
+        - name: next
+          in: path
+      x-yc-apigateway-integration:
+        type: dummy
+        http_code: 301
+        http_headers:
+          Location: /process/_/o/{tail}/-/{next}/o
+        content:
+          "*": ""
+  /process/o/_/_/{tail+}/-/{next+}:
+    get:
+      parameters:
+        - name: tail
+          in: path
+        - name: next
+          in: path
+      x-yc-apigateway-integration:
+        type: dummy
+        http_code: 301
+        http_headers:
+          Location: /process/_/_/{tail}/-/{next}/_
+        content:
+          "*": ""
+  /process/_/o/o/{tail+}/-/{next+}:
+    get:
+      parameters:
+        - name: tail
+          in: path
+        - name: next
+          in: path
+      x-yc-apigateway-integration:
+        type: dummy
+        http_code: 301
+        http_headers:
+          Location: /process/o/o/{tail}/-/{next}/o
+        content:
+          "*": ""
+  /process/_/o/_/{tail+}/-/{next+}:
+    get:
+      parameters:
+        - name: tail
+          in: path
+        - name: next
+          in: path
+      x-yc-apigateway-integration:
+        type: dummy
+        http_code: 301
+        http_headers:
+          Location: /process/o/_/{tail}/-/{next}/o
+        content:
+          "*": ""
+  /process/_/_/o/{tail+}/-/{next+}:
+    get:
+      parameters:
+        - name: tail
+          in: path
+        - name: next
+          in: path
+      x-yc-apigateway-integration:
+        type: dummy
+        http_code: 301
+        http_headers:
+          Location: /process/_/o/{tail}/-/{next}/o
+        content:
+          "*": ""
+  /process/_/_/_/{tail+}/-/{next+}:
+    get:
+      parameters:
+        - name: tail
+          in: path
+        - name: next
+          in: path
+      x-yc-apigateway-integration:
+        type: dummy
+        http_code: 301
+        http_headers:
+          Location: /process/_/_/{tail}/-/{next}/_
+        content:
+          "*": ""
+  ######
+  ######
+  ######
+  /process/o/o/o/-/{n0}/{n1}/{next+}:
+    get:
+      parameters:
+        - name: n0
+          in: path
+        - name: n1
+          in: path
+        - name: next
+          in: path
+      x-yc-apigateway-integration:
+        type: dummy
+        http_code: 301
+        http_headers:
+          Location: /start/{n0}/{n1}/{next}/_
+        content:
+          "*": ""
+  /process/o/o/_/-/{n0}/{n1}/{next+}:
+    get:
+      parameters:
+        - name: n0
+          in: path
+        - name: n1
+          in: path
+        - name: next
+          in: path
+      x-yc-apigateway-integration:
+        type: dummy
+        http_code: 301
+        http_headers:
+          Location: /start/{n0}/{n1}/{next}/o
+        content:
+          "*": ""
+  /process/o/_/o/-/{n0}/{n1}/{next+}:
+    get:
+      parameters:
+        - name: n0
+          in: path
+        - name: n1
+          in: path
+        - name: next
+          in: path
+      x-yc-apigateway-integration:
+        type: dummy
+        http_code: 301
+        http_headers:
+          Location: /start/{n0}/{n1}/{next}/o
+        content:
+          "*": ""
+  /process/o/_/_/-/{n0}/{n1}/{next+}:
+    get:
+      parameters:
+        - name: n0
+          in: path
+        - name: n1
+          in: path
+        - name: next
+          in: path
+      x-yc-apigateway-integration:
+        type: dummy
+        http_code: 301
+        http_headers:
+          Location: /start/{n0}/{n1}/{next}/_
+        content:
+          "*": ""
+  /process/_/o/o/-/{n0}/{n1}/{next+}:
+    get:
+      parameters:
+        - name: n0
+          in: path
+        - name: n1
+          in: path
+        - name: next
+          in: path
+      x-yc-apigateway-integration:
+        type: dummy
+        http_code: 301
+        http_headers:
+          Location: /start/{n0}/{n1}/{next}/o
+        content:
+          "*": ""
+  /process/_/o/_/-/{n0}/{n1}/{next+}:
+    get:
+      parameters:
+        - name: n0
+          in: path
+        - name: n1
+          in: path
+        - name: next
+          in: path
+      x-yc-apigateway-integration:
+        type: dummy
+        http_code: 301
+        http_headers:
+          Location: /start/{n0}/{n1}/{next}/o
+        content:
+          "*": ""
+  /process/_/_/o/-/{n0}/{n1}/{next+}:
+    get:
+      parameters:
+        - name: n0
+          in: path
+        - name: n1
+          in: path
+        - name: next
+          in: path
+      x-yc-apigateway-integration:
+        type: dummy
+        http_code: 301
+        http_headers:
+          Location: /start/{n0}/{n1}/{next}/o
+        content:
+          "*": ""
+  /process/_/_/_/-/{n0}/{n1}/{next+}:
+    get:
+      parameters:
+        - name: n0
+          in: path
+        - name: n1
+          in: path
+        - name: next
+          in: path
+      x-yc-apigateway-integration:
+        type: dummy
+        http_code: 301
+        http_headers:
+          Location: /start/{n0}/{n1}/{next}/_
+        content:
+          "*": ""
+  ######
+  ######
+  ######
+  /swap/{old+}/-/{next+}:
+    get:
+      parameters:
+        - name: old
+          in: path
+        - name: next
+          in: path
+      x-yc-apigateway-integration:
+        type: dummy
+        http_code: 301
+        http_headers:
+          Location: /process/{next}/-
+        content:
+          "*": ""

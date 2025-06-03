@@ -1,0 +1,32 @@
+openapi: 3.0.0
+info:
+  title: Yes or No
+  version: 1.0.0
+  description: Response with "Yes" if path contains /yes/ or "No" if path contains "/no/"
+servers:
+  - url: https://d5dlqokbr75c9u16bs4b.aqkd4clz.apigw.yandexcloud.net
+paths:
+  /{head+}/yes/{tail+}:
+    get:
+      parameters:
+        - name: head
+          in: path
+        - name: tail
+          in: path
+      x-yc-apigateway-integration:
+        type: dummy
+        http_code: 200
+        content:
+          "*": "Yes!"
+  /{head+}/no/{tail+}:
+    get:
+      parameters:
+        - name: head
+          in: path
+        - name: tail
+          in: path
+      x-yc-apigateway-integration:
+        type: dummy
+        http_code: 200
+        content:
+          "*": "No!"

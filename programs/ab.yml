@@ -1,0 +1,46 @@
+openapi: 3.0.0
+info:
+  title: A to B
+  version: 1.0.0
+  description: Replace all /a/ path segments with /b/
+servers:
+  - url: https://d5dlqokbr75c9u16bs4b.aqkd4clz.apigw.yandexcloud.net
+paths:
+  /a/{padding+}/{tail+}:
+    get:
+      parameters:
+        - name: padding
+          in: path
+        - name: tail
+          in: path
+      x-yc-apigateway-integration:
+        type: dummy
+        http_code: 301
+        http_headers:
+          Location: /b/{padding}/{tail}
+        content:
+          "*": ""
+  /{h}/{head+}/a/{tail+}:
+    get:
+      parameters:
+        - name: head
+          in: path
+        - name: tail
+          in: path
+      x-yc-apigateway-integration:
+        type: dummy
+        http_code: 301
+        http_headers:
+          Location: /{head}/b/{tail}
+        content:
+          "*": ""
+  /{result+}:
+    get:
+      parameters:
+        - name: result
+          in: path
+      x-yc-apigateway-integration:
+        type: dummy
+        http_code: 200
+        content:
+          "*": "{result}"

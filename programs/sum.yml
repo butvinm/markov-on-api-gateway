@@ -1,0 +1,170 @@
+openapi: 3.0.0
+info:
+  title: Binary sum
+  version: 1.0.0
+  description: Calculate sum of two binary numbers. Input path format /sum/{a}/_/{b}
+servers:
+  - url: https://d5dlqokbr75c9u16bs4b.aqkd4clz.apigw.yandexcloud.net
+paths:
+  /sum/{a+}/_/{b+}:
+    get:
+      parameters:
+        - name: a
+          in: path
+        - name: b
+          in: path
+      x-yc-apigateway-integration:
+        type: dummy
+        http_code: 301
+        http_headers:
+          Location: /0/{a}/_/{b}/=/
+        content:
+          "*": ""
+  /0/{a+}/0/_/{b+}/0/=/{c+}:
+    get:
+      parameters:
+        - name: a
+          in: path
+        - name: b
+          in: path
+        - name: c
+          in: path
+      x-yc-apigateway-integration:
+        type: dummy
+        http_code: 301
+        http_headers:
+          Location: /0/{a}/_/{b}/=/0/{c}
+        content:
+          "*": ""
+  /1/{a+}/0/_/{b+}/0/=/{c+}:
+    get:
+      parameters:
+        - name: a
+          in: path
+        - name: b
+          in: path
+        - name: c
+          in: path
+      x-yc-apigateway-integration:
+        type: dummy
+        http_code: 301
+        http_headers:
+          Location: /0/{a}/_/{b}/=/1/{c}
+        content:
+          "*": ""
+  /0/{a+}/0/_/{b+}/1/=/{c+}:
+    get:
+      parameters:
+        - name: a
+          in: path
+        - name: b
+          in: path
+        - name: c
+          in: path
+      x-yc-apigateway-integration:
+        type: dummy
+        http_code: 301
+        http_headers:
+          Location: /0/{a}/_/{b}/=/1/{c}
+        content:
+          "*": ""
+  /1/{a+}/0/_/{b+}/1/=/{c+}:
+    get:
+      parameters:
+        - name: a
+          in: path
+        - name: b
+          in: path
+        - name: c
+          in: path
+      x-yc-apigateway-integration:
+        type: dummy
+        http_code: 301
+        http_headers:
+          Location: /1/{a}/_/{b}/=/0/{c}
+        content:
+          "*": ""
+  /0/{a+}/1/_/{b+}/0/=/{c+}:
+    get:
+      parameters:
+        - name: a
+          in: path
+        - name: b
+          in: path
+        - name: c
+          in: path
+      x-yc-apigateway-integration:
+        type: dummy
+        http_code: 301
+        http_headers:
+          Location: /0/{a}/_/{b}/=/1/{c}
+        content:
+          "*": ""
+  /1/{a+}/1/_/{b+}/0/=/{c+}:
+    get:
+      parameters:
+        - name: a
+          in: path
+        - name: b
+          in: path
+        - name: c
+          in: path
+      x-yc-apigateway-integration:
+        type: dummy
+        http_code: 301
+        http_headers:
+          Location: /1/{a}/_/{b}/=/0/{c}
+        content:
+          "*": ""
+  /0/{a+}/1/_/{b+}/1/=/{c+}:
+    get:
+      parameters:
+        - name: a
+          in: path
+        - name: b
+          in: path
+        - name: c
+          in: path
+      x-yc-apigateway-integration:
+        type: dummy
+        http_code: 301
+        http_headers:
+          Location: /1/{a}/_/{b}/=/0/{c}
+        content:
+          "*": ""
+  /1/{a+}/1/_/{b+}/1/=/{c+}:
+    get:
+      parameters:
+        - name: a
+          in: path
+        - name: b
+          in: path
+        - name: c
+          in: path
+      x-yc-apigateway-integration:
+        type: dummy
+        http_code: 301
+        http_headers:
+          Location: /1/{a}/_/{b}/=/1/{c}
+        content:
+          "*": ""
+  /0//_//=/{c+}:
+    get:
+      parameters:
+        - name: c
+          in: path
+      x-yc-apigateway-integration:
+        type: dummy
+        http_code: 200
+        content:
+          "*": "{c}"
+  /1//_//=/{c+}:
+    get:
+      parameters:
+        - name: c
+          in: path
+      x-yc-apigateway-integration:
+        type: dummy
+        http_code: 200
+        content:
+          "*": "1/{c}"
