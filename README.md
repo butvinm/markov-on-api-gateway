@@ -170,9 +170,11 @@ curl -L <gateway host>/sum/1/0/0/1/0/_/1/1/1/0/1
 1/0/1/1/1/1
 ```
 
-### Rule 110
+### [Rule 110](./programs/rule110.yml)
 
 We can demonstrate Turing completeness by implementing [**Rule 110**](https://en.wikipedia.org/wiki/Rule_110), a one-dimensional cellular automaton that's proven to be Turing complete.
+
+There is nothing interesting in the implementation, so lets focus on result. You can find full implementation of all algorithms in [programs/](./programs) directory.
 
 **Run:**
 
