@@ -28,7 +28,7 @@ So, an API Gateway can:
 3. **Repeat** this process by redirecting to the new path.
 
 Sound familiar? That’s right—an API Gateway's specification can effectively **run Markov algorithms**, meaning it can theoretically execute **any** algorithm.
-Yes, your humble API Gateway is secretly [**Turing complete**](https://en.wikipedia.org/wiki/Turing_completeness)!
+Yes, your API Gateway is actually [**Turing complete**](https://en.wikipedia.org/wiki/Turing_completeness)!
 
 In this repository, you'll find experiments implementing simple algorithms using **only** Yandex Cloud API Gateway’s path-matching and redirect capabilities.
 
